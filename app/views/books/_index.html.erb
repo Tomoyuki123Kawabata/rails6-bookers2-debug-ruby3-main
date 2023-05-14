@@ -17,22 +17,8 @@
         <td><%= link_to book.title,book %></td>
         <td><%= book.body %></td>
         <td id="favorite_buttons_<%= book.id %>">
-　　　  <%= render "favorites/favorite", book: book %>
+　　　  <%= render "favorites/favorites", book: book %>
 　　    </td>
-        <td>
-          <div id="star-rate<%= book.id%>"> </td>
-          <script>
-            $('#star-rate<%= book.id %>').empty();
-            $('#star-rate<%= book.id%>').raty({
-              size      : 36,
-              starOff   : '<%= asset_path('star-off.png') %>',
-              starOn    : '<%= asset_path('star-on.png') %>',
-              half      : false,
-              readOnly: true,
-              score: <%= book.star %>,
-            });
-          </script>
-          </div>    
         <td>
           <p><%= link_to "#{book.post_comments.count} コメント", book_path(book.id) %></p>
         </td>
